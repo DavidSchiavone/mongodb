@@ -8,6 +8,8 @@ If you want to learn more about Quarkus, please visit its website: <https://quar
 
 You can run your application in dev mode that enables live coding using:
 
+Important: Docker has to be running, before starting the application
+
 ```shell script
 ./mvnw quarkus:dev
 ```
