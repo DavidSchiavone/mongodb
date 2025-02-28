@@ -32,7 +32,6 @@ public class BlogService {
         return blogRepository.findById(new ObjectId(id));
     }
 
-    @Transactional
     public Blog addBlog(BlogDTO blogDto) {
         Log.info("Adding blog " + blogDto.getTitle());
         Blog blog = BlogMapper.INSTANCE.map(blogDto);
@@ -41,7 +40,6 @@ public class BlogService {
         return blog;
     }
 
-    @Transactional
     public boolean updateBlog(String id, BlogDTO blog) {
         return Optional.ofNullable(getBlog(id))
                 .map(blogToUpdate -> {
@@ -56,7 +54,6 @@ public class BlogService {
                 .orElse(false);
     }
 
-    @Transactional
     public boolean deleteBlog(String id) {
         return blogRepository.deleteById(new ObjectId(id));
     }
